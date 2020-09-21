@@ -14,11 +14,9 @@ class Search extends React.Component{
             loading: false,
             searchResult: []
         }
-        this.handleChange = this.handleChange.bind(this)
-        this.handleRedirect = this.handleRedirect.bind(this)
     }
 
-handleChange(event){
+handleChange = (event) => {
     const searchQuery = event.target.value;
     this.setState({
         searchQuery: searchQuery,
@@ -30,7 +28,6 @@ handleChange(event){
         })
         return ""
     }
-    // this.setState({loading : true })
     fetch(`${API_URL}/autocomplete?searchQuery=${searchQuery}`)
     .then(handleResponse)
     .then((result)=>{
@@ -40,7 +37,7 @@ handleChange(event){
         })
     })
 }
-renderSearchResults(){
+renderSearchResults = () => {
     const {loading, searchResult, searchQuery} = this.state;
     if(!searchQuery) {
         return ""
@@ -66,7 +63,7 @@ renderSearchResults(){
         )
     }
 }
-handleRedirect(currencyId){
+handleRedirect = (currencyId) => {
     this.setState({
         searchQuery: '',
         searchResult: []

@@ -49,7 +49,6 @@ class Detail extends React.Component {
         } else if (error) {
             return (<div className="error">{error}</div>)
         } else {
-            // console.log(currency);
             const { id, name, marketCap, price, rank, percentChange24h, symbol, totalSupply, volume24h } = currency;
             return (
                 <div className="Detail">
@@ -73,8 +72,6 @@ class Detail extends React.Component {
                         <div className="Detail-item">
                             <span className="Detail-title">  Total Supply</span><span className="Detail-dollar">$</span>{totalSupply}
                         </div>
-
-
                     </div>
                     <div className="NotFound">
                         <Link className="NotFound-link" to="/">go to home page</Link>
